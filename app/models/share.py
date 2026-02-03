@@ -1,8 +1,8 @@
 
-from cProfile import label
+
 from enum import Enum
 
-from sqlalchemy import UniqueConstraint, table
+from sqlalchemy import UniqueConstraint
 from sqlmodel import Field, SQLModel
 
 

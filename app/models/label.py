@@ -4,7 +4,7 @@ from sqlalchemy import UniqueConstraint
 from sqlmodel import Field, SQLModel
 
 
-class Lable(SQLModel, table=True):
+class Label(SQLModel, table=True):
     __tablename__ = "lable"
     __table_args__ = (UniqueConstraint(
         "owner_id", "name", name="uq_label_owner_name"))
