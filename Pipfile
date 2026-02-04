@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 fastapi = {extras = ["standard"], version = "*"}
 sqlmodel = "*"
+pwdlib = {extras = ["argon2"], version = "*"}
+pyjwt = "*"
 
 [dev-packages]
 

@@ -88,6 +88,7 @@ class ShareRepository:
             select(NoteShare.note_id).where(NoteShare.user_id == user_id)
         ).all()
 
+        return rows
         # return [row[0] if isinstance(row, tuple) else row for row in rows]
 
     def list_label_ids_shared_with_user(self, user_id: int) -> list[int]:
