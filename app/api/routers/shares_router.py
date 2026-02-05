@@ -13,8 +13,8 @@ router = APIRouter(prefix="/shares", tags=["Shares"])
 @router.post("/notes/{note_id}", status_code=status.HTTP_201_CREATED)
 def share_note(note_id: int, payload: ShareRequest, db: DBSession, user: CurrentUser):
     share = ShareService(db).share_note(
-        note_id,
         user.id,
+        note_id,
         payload.target_user_id,
         payload.role
     )

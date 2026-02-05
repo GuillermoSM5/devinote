@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     JWT_ALG: str = Field(default="HS256", env="JWT_ALG")
     JWT_EXPIRE_MIN: int = Field(default=60*24, env="JWT_EXPIRES_MIN")
     PROJECT_NAME: str = "Devinote"
+    ENVIRONMENT: str = Field(..., env="ENVIRONMENT")
 
     class Config:
         env_file = ".env"

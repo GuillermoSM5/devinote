@@ -9,7 +9,9 @@ engine = create_engine(settings.DATABASE_URL, echo=True, connect_args={
 
 
 def init_db() -> None:
-    SQLModel.metadata.create_all(engine)  # dev
+    pass
+    # if settings.ENVIRONMENT == "DEV":
+    #     SQLModel.metadata.create_all(engine)  # dev
 
 
 def get_session() -> Iterator[Session]:

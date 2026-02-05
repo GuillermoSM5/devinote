@@ -1,5 +1,4 @@
 
-from tkinter.messagebox import NO
 from fastapi import HTTPException
 from sqlmodel import Session
 
@@ -84,7 +83,7 @@ class NoteService:
         for key, value in updates.items():
             setattr(note, key, value)
 
-        note = self.notes.update(updates)
+        note = self.notes.update(note)
 
         if label_ids is not None:
             if note.owner_id != user_id:

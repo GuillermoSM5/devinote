@@ -33,7 +33,7 @@ class NoteRepository:
     def delete(self, note: Note) -> None:
         self.db.exec(delete(NoteLabelLink).where(
             NoteLabelLink.note_id == note.id))
-        self.delete(note)
+        self.db.delete(note)
         self.db.commit()
 
     def replace_label(self, owner_id: int, note_id: int, label_ids: list[int]) -> None:

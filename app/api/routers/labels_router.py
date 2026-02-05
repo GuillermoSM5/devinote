@@ -9,7 +9,7 @@ router = APIRouter(prefix="/labels", tags=["Labels"])
 
 
 @router.get("/", response_model=list[LabelRead])
-def list_labels(db: CurrentUser, user: CurrentUser):
+def list_labels(db: DBSession, user: CurrentUser):
     return LabelService(db).list(user.id)
 
 

@@ -17,7 +17,6 @@ class ShareService:
 
     def share_note(self, owner_id: int, note_id: int, target_user_id: int, role: ShareRole):
         note = self.notes.get(note_id)
-
         if not note or note.owner_id != owner_id:
             raise HTTPException(
                 status_code=404, detail="Nota no encontrada o no autorizado")
